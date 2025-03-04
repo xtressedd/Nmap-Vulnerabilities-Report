@@ -1,0 +1,193 @@
+IP Address,Port,Service,Vulnerability ID,Description
+192.168.121.131,80,http,http-sql-injection,"
+  Possible sqli for queries:
+    http://192.168.121.131:80/?C=D%3BO%3DA%27%20OR%20sqlspider
+    http://192.168.121.131:80/?C=N%3BO%3DD%27%20OR%20sqlspider
+    http://192.168.121.131:80/?C=S%3BO%3DA%27%20OR%20sqlspider
+    http://192.168.121.131:80/?C=M%3BO%3DA%27%20OR%20sqlspider
+"
+192.168.121.131,80,http,http-stored-xss,Couldn't find any stored XSS vulnerabilities.
+192.168.121.131,80,http,http-enum,"
+  /: Root directory w/ listing on 'apache/2.4.7 (ubuntu)'
+  /phpmyadmin/: phpMyAdmin
+  /uploads/: Potentially interesting directory w/ listing on 'apache/2.4.7 (ubuntu)'
+"
+192.168.121.131,80,http,http-slowloris-check,"
+  VULNERABLE:
+  Slowloris DOS attack
+    State: LIKELY VULNERABLE
+    IDs:  CVE:CVE-2007-6750
+      Slowloris tries to keep many connections to the target web server open and hold
+      them open as long as possible.  It accomplishes this by opening connections to
+      the target web server and sending a partial request. By doing so, it starves
+      the http server's resources causing Denial Of Service.
+      
+    Disclosure date: 2009-09-17
+    References:
+      http://ha.ckers.org/slowloris/
+      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+"
+192.168.121.131,80,http,http-csrf,"
+Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=192.168.121.131
+  Found the following possible CSRF vulnerabilities: 
+    
+    Path: http://192.168.121.131:80/payroll_app.php
+    Form id: 
+    Form action: 
+    
+    Path: http://192.168.121.131:80/drupal/
+    Form id: user-login-form
+    Form action: /drupal/?q=node&destination=node
+    
+    Path: http://192.168.121.131:80/chat/
+    Form id: name
+    Form action: index.php
+    
+    Path: http://192.168.121.131:80/drupal/?q=node/1
+    Form id: user-login-form
+    Form action: /drupal/?q=node/1&destination=node/1
+    
+    Path: http://192.168.121.131:80/drupal/?q=user/password
+    Form id: user-pass
+    Form action: /drupal/?q=user/password
+    
+    Path: http://192.168.121.131:80/drupal/?q=node&amp;destination=node
+    Form id: user-login-form
+    Form action: /drupal/?q=node&destination=node%3Famp%253Bdestination%3Dnode
+    
+    Path: http://192.168.121.131:80/drupal/?q=node/2
+    Form id: user-login-form
+    Form action: /drupal/?q=node/2&destination=node/2
+    
+    Path: http://192.168.121.131:80/drupal/?q=user/register
+    Form id: user-register-form
+    Form action: /drupal/?q=user/register
+"
+192.168.121.131,80,http,http-dombased-xss,Couldn't find any DOM based XSS.
+192.168.121.131,6667,irc,irc-botnet-channels,"
+  ERROR: EOF
+"
+192.168.121.131,6667,irc,irc-unrealircd-backdoor,Looks like trojaned version of unrealircd. See http://seclists.org/fulldisclosure/2010/Jun/277
+192.168.121.132,4848,appserv-http,ssl-dh-params,"
+  VULNERABLE:
+  Diffie-Hellman Key Exchange Insufficient Group Strength
+    State: VULNERABLE
+      Transport Layer Security (TLS) services that use Diffie-Hellman groups
+      of insufficient strength, especially those using one of a few commonly
+      shared groups, may be susceptible to passive eavesdropping attacks.
+    Check results:
+      WEAK DH GROUP 1
+            Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+            Modulus Type: Safe prime
+            Modulus Source: RFC2409/Oakley Group 2
+            Modulus Length: 1024
+            Generator Length: 8
+            Public Key Length: 1024
+    References:
+      https://weakdh.org
+"
+192.168.121.132,8031,Unknown,ssl-dh-params,"
+  VULNERABLE:
+  Anonymous Diffie-Hellman Key Exchange MitM Vulnerability
+    State: VULNERABLE
+      Transport Layer Security (TLS) services that use anonymous
+      Diffie-Hellman key exchange only provide protection against passive
+      eavesdropping, and are vulnerable to active man-in-the-middle attacks
+      which could completely compromise the confidentiality and integrity
+      of any data exchanged over the resulting session.
+    Check results:
+      ANONYMOUS DH GROUP 1
+            Cipher Suite: TLS_DH_anon_WITH_AES_128_CBC_SHA
+            Modulus Type: Non-safe prime
+            Modulus Source: sun.security.provider/768-bit DSA group with 160-bit prime order subgroup
+            Modulus Length: 768
+            Generator Length: 768
+            Public Key Length: 768
+    References:
+      https://www.ietf.org/rfc/rfc2246.txt
+"
+192.168.121.132,8080,http-proxy,http-slowloris-check,"
+  VULNERABLE:
+  Slowloris DOS attack
+    State: LIKELY VULNERABLE
+    IDs:  CVE:CVE-2007-6750
+      Slowloris tries to keep many connections to the target web server open and hold
+      them open as long as possible.  It accomplishes this by opening connections to
+      the target web server and sending a partial request. By doing so, it starves
+      the http server's resources causing Denial Of Service.
+      
+    Disclosure date: 2009-09-17
+    References:
+      http://ha.ckers.org/slowloris/
+      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+"
+192.168.121.132,8080,http-proxy,http-iis-webdav-vuln,WebDAV is DISABLED. Server is not currently vulnerable.
+192.168.121.132,8080,http-proxy,http-litespeed-sourcecode-download,"
+Litespeed Web Server Source Code Disclosure (CVE-2010-2333)
+/index.php source code:
+"
+192.168.121.132,8080,http-proxy,http-enum,"
+  /sdk/../../../../../../../etc/vmware/hostd/vmInventory.xml: Possible path traversal in VMWare (CVE-2009-3733)
+  /sdk/%2E%2E/%2E%2E/%2E%2E/%2E%2E/%2E%2E/%2E%2E/%2E%2E/etc/vmware/hostd/vmInventory.xml: Possible path traversal in VMWare (CVE-2009-3733)
+  /../../../../../../../../../../etc/passwd: Possible path traversal in URI
+  /../../../../../../../../../../boot.ini: Possible path traversal in URI
+  ..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f/var/mobile/Library/AddressBook/AddressBook.sqlitedb: Possible iPhone/iPod/iPad generic file sharing app Directory Traversal (iOS)
+"
+192.168.121.132,8181,intermapper,ssl-dh-params,"
+  VULNERABLE:
+  Diffie-Hellman Key Exchange Insufficient Group Strength
+    State: VULNERABLE
+      Transport Layer Security (TLS) services that use Diffie-Hellman groups
+      of insufficient strength, especially those using one of a few commonly
+      shared groups, may be susceptible to passive eavesdropping attacks.
+    Check results:
+      WEAK DH GROUP 1
+            Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+            Modulus Type: Safe prime
+            Modulus Source: RFC2409/Oakley Group 2
+            Modulus Length: 1024
+            Generator Length: 8
+            Public Key Length: 1024
+    References:
+      https://weakdh.org
+"
+192.168.121.132,8383,m2mservices,ssl-dh-params,"
+  VULNERABLE:
+  Diffie-Hellman Key Exchange Insufficient Group Strength
+    State: VULNERABLE
+      Transport Layer Security (TLS) services that use Diffie-Hellman groups
+      of insufficient strength, especially those using one of a few commonly
+      shared groups, may be susceptible to passive eavesdropping attacks.
+    Check results:
+      WEAK DH GROUP 1
+            Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA
+            Modulus Type: Safe prime
+            Modulus Source: RFC2409/Oakley Group 2
+            Modulus Length: 1024
+            Generator Length: 8
+            Public Key Length: 1024
+    References:
+      https://weakdh.org
+"
+192.168.121.132,8443,https-alt,http-vuln-cve2014-3704,ERROR: Script execution failed (use -d to debug)
+192.168.121.132,8443,https-alt,http-aspnet-debug,ERROR: Script execution failed (use -d to debug)
+192.168.121.132,8443,https-alt,ssl-dh-params,"
+  VULNERABLE:
+  Anonymous Diffie-Hellman Key Exchange MitM Vulnerability
+    State: VULNERABLE
+      Transport Layer Security (TLS) services that use anonymous
+      Diffie-Hellman key exchange only provide protection against passive
+      eavesdropping, and are vulnerable to active man-in-the-middle attacks
+      which could completely compromise the confidentiality and integrity
+      of any data exchanged over the resulting session.
+    Check results:
+      ANONYMOUS DH GROUP 1
+            Cipher Suite: TLS_DH_anon_WITH_AES_128_CBC_SHA
+            Modulus Type: Non-safe prime
+            Modulus Source: sun.security.provider/768-bit DSA group with 160-bit prime order subgroup
+            Modulus Length: 768
+            Generator Length: 768
+            Public Key Length: 768
+    References:
+      https://www.ietf.org/rfc/rfc2246.txt
+"
